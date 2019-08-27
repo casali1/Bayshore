@@ -7,6 +7,6 @@ namespace Bayshore.Service
 {
     public interface IConverterService
     {
-        string ConvertIntoWords(long number);
+        string ConvertIntoWords(decimal incomingNumber);
     }
 }

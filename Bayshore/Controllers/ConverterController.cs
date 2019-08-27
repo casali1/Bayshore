@@ -16,11 +16,16 @@ namespace Bayshore.Controllers
             _converterService = converterService;
         }
 
-        public IActionResult Index(long someNumber)
+        public IActionResult Index(decimal someNumber)
         {
             ViewData["someNumber"] = someNumber;
 
-            var wordedResponse = _converterService.ConvertIntoWords(someNumber);
+            var wordedResponse = string.Empty;
+
+            if (someNumber != 0)
+                wordedResponse = _converterService.ConvertIntoWords(someNumber);
+            else
+                wordedResponse = "Zero";
 
             ViewData["ConvertedWords"] = wordedResponse;
 
