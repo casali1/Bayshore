@@ -6,6 +6,7 @@ namespace Bayshore.Service
     {
         public string ConvertIntoWords(decimal incomingNumber)
         {
+            incomingNumber = Math.Round(incomingNumber, 2);
             var convertedNumToString = incomingNumber.ToString();
             var checkForDecimal = convertedNumToString.Split('.');
 
