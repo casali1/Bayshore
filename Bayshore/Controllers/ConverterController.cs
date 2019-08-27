@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Bayshore.Service;
+﻿using Bayshore.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bayshore.Controllers
@@ -23,9 +19,13 @@ namespace Bayshore.Controllers
             var wordedResponse = string.Empty;
 
             if (someNumber != 0)
+            {
                 wordedResponse = _converterService.ConvertIntoWords(someNumber);
+            }
             else
+            {
                 wordedResponse = "Zero";
+            }
 
             ViewData["ConvertedWords"] = wordedResponse;
 
